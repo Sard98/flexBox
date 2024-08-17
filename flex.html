@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  	
+  	*,
+  	*::after,
+  	*::before{
+  		box-sizing: border-box;
+  	}
+  	.container{
+  		width: 100vh;
+  		margin-right: auto;
+  		margin-left: auto;	
+  	}
+  	.text-center{
+  		text-align: center;
+  	}
+  	.flex-direction {
+  		background-color: pink;
+  		display: flex;
+  	}
+  	.flex-direction > div {
+  		text-align: center;
+  		align-content: center;
+  		box-shadow: 1px 0px 12px white;
+  		border-radius: 15px;
+  		margin: 5px;
+  		width: 100px;
+  		height: 100px;
+  		background: orange;
+  	}
+  	.flex-direction > div:hover{
+  		cursor: pointer;
+  		width: 105px;
+  		height: 105px;
+  	}
+  	.flex-row {
+  		flex-direction: row;
+  	}
+  	.flex-column {
+  		flex-direction: column;
+  	}
+  	.flex-row-reverse{
+  		flex-direction: row-reverse;
+  	}
+  	.flex-column-reverse{
+  		flex-direction: column-reverse;
+  	}
+  	/* 2 */
+  	.flexWrap{
+  		display: flex;	
+  		width: 50vh;
+  		margin: auto;	
+  		border: 12px solid green;
+  	}
+  	
+  	.flexWrap > div {
+  		background: yellow;
+  		width: 100vh;
+  		height: 100px;
+  		text-align: center;
+  		align-content: center;
+  		border-radius: 14px;
+  		cursor: pointer;
+  	}
+  	.nowrap{
+  		flex-wrap: no-wrap;
+  	}
+  	.wrap{
+  		flex-wrap: wrap;
+  	}
+  	.wrapReverse {
+  		flex-wrap: wrap-reverse;
+  	}
+  	/*3*/
+  	.justifyContent{
+  		display: flex;
+  		width: 100vh;
+  		border: 3px solid purple;
+  	}
+  	.justifyContent > div{
+  		border: 3px solid dark;
+  		width: 10vh;
+  		height: 10vh;
+  		color: white;
+  		text-align: center;
+  		align-content: center;
+  		cursor: pointer;
+  		background: green;
+  		border-radius: 15px;
+  	}
+  	.flexStart{
+  		justify-content: flex-start;
+  	}
+  	.flexEnd {
+		justify-content: flex-end;  	
+	}
+	.center{
+		justify-content: center;
+	}
+	.spaceBetween{
+		justify-content: space-between;
+	}
+	.spaceAround{
+		justify-content: space-around;
+	}
+	.spaceEvenly {
+		justify-content: space-evenly;
+	}
+	.alignItems {
+		height: 50vh;
+		width: 100vh;
+		display: flex;
+		border: 5px solid black;
+	}
+	.alignItems > div {
+		padding: 15px;
+		background: grey;
+		text-align: center;
+		align-content: center;
+		cursor: pointer;
+		border-radius: 15px;
+	}
+	.flex-start{
+		align-items: flex-start;
+	}
+	.flex-end {
+		align-items: flex-end;
+	}
+	.flex-center {
+		align-items: center;
+	}
+	.stretch {
+		align-items: stretch;
+	}
+	.baseline {
+		align-items: baseline;
+	}
+	/* 4 */
+	.alignContent {
+		width: 100vh;
+		height: 50vh;
+		margin: auto;
+		border: 2px solid red;
+		flex-wrap: wrap;
+		display: flex;
+		gap: 15px;
+	}
+	.alignContent > div{
+		padding: 15px;
+		cursor: pointer;	
+		background: orange;
+		text-align: center;
+		align-content: center;
+		border:3px solid red;
+	}
+	.align-C-normal{
+		align-content: normal;
+	}
+	.align-C-start {
+		align-content: flex-start;
+	}
+	.align-C-end {
+		align-content: flex-end;	
+	}
+	.align-C-center {
+		align-content: center;
+	}
+	.align-C-stretch {
+		align-content: stretch;
+	}
+	.align-C-baseline {
+		align-content: baseline;
+	}
+	.align-C-space-between {
+		align-content: space-between;
+	}
+	.align-C-space-around {
+		align-content: space-around;
+	}
+	.align-C-space-evenly{
+		align-content: space-evenly;
+	}
+	
+	.flexGap{
+		display: flex;
+		flex-wrap: wrap;
+		border: 3px solid scarlet;
+		background: blue;
+	}
+	.flexGap > div {
+		background: red;
+		text-align: center;
+		color: white;
+		font-weight: 600;
+		cursor: pointer;
+		align-content: center;
+		width: 100px;
+		height: 100px;
+		border-radius: 4px;
+	}
+	
+	
+	/* 🐈 child properties */
+	.order{
+		display: flex;
+		height: 50vh;
+		width: 100vh;
+		border: 4px solid #432;
+	}
+	
+	
+	.order > div{
+		background: green;
+		flex: 1;
+		width: 100px;
+		height: 100px;
+		padding: 15px;
+		text-align: center;
+		align-content: center;
+		border-radius: 15px;
+	}
+	.flexGrow {
+		display: flex;
+		border: 1px solid black;
+	}
+	.flexGrow > div{
+		background: purple;
+		padding: 10px;
+		border-radius: 3px;
+	}
+	.flexShrink {
+		display: flex;
+		background: grey;
+		color: white;
+		border: 12px solid silver;
+	}
+	.flexShrink > div {
+		background: red;
+		width: 250px;
+		text-align: center;
+		align-content: center;
+		height: 150px;
+		border: 3px solid white;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+	.flexBasis{
+		display: flex;
+		background: green;
+		border: 4px solid orange;
+		width: 100vh;	
+	}
+	.flexBasis > div{
+		text-align: center;
+		align-content: center;
+		border: 3px solid red;
+		padding: 15px;
+		border-radius: 14px;
+		cursor: pointer;
+	}
+	.alignSelf{
+		background: green;
+		border: 3px solid black;
+		display: flex;
+		gap: 12px;
+		width: 100wh;
+		flex-wrap: wrap;
+		height: 60vh;
+	}
+	.alignSelf > div {
+		background: red;
+		padding: 15px;
+		border-radius: 9px;
+		cursor: pointer;
+	}
+</style>
+
+</head>
+	<body>
+		<div class="container">
+			<h1 class="text-center">Flex Parent Properties</h1>
+			<h2 class="text-center">flex-direction = </h2>
+			<div class="flex-direction">
+				<div>1 row(default)</div>
+				<div>2 row-reverse</div>
+				<div>3 column</div>
+				<div>4 column-reverse</div>
+			</div>
+			<h2 class="text-center">flex-wrap = </h2>
+			<div class="flexWrap">
+				<div>1 no-wrap</div>
+				<div>2 wrap</div>
+				<div>3 wrap-reverse</div>
+			</div>
+			<h2 class="text-center">justify-content = </h2>
+			<div class="justifyContent">
+				<div>1 flex-start</div>
+				<div>2 flex-end</div>
+				<div>3 center</div>
+				<div>4 space between</div>
+				<div>5 space-around</div>
+				<div>6 space-evenly</div>
+			</div>
+			<h2 class="text-center">align-items = </h2>
+			<div class="alignItems">
+				<div>1 flex-start</div>
+				<div>2 flex-end</div>
+				<div>3 center</div>
+				<div>4 stretch (default)</div>
+				<div>5 baseline</div>
+			</div>
+			<h2 class="text-center">align-content = (it doesn't work without flex-wrap: wrap or wrap-reverse)</h2>
+			<div class="alignContent">
+				<div>1 align-C-start            </div>
+				<div>2 align-C-end              </div>
+				<div>3 align-C-center           </div>
+				<div>4 align-C-stretch		</div>
+				<div>5 align-C-baseline         </div>
+				<div>6 align-C-normal  (default)</div>
+				<div>7 align-C-space-between    </div>
+				<div>6 align-C-space-around     </div>
+				<div>7 align-C-space-evenly     </div>
+			</div>
+			<h2 class="text-center">gap: <span>row-gap</span> <span>column-gap</span> <span>gap</span> </h2>
+			<div class="flexGap">
+				<div>1</div>
+				<div>2</div>
+				<div>3</div>
+				<div>4</div>
+				<div>5</div>
+				<div>6</div>
+				<div>7</div>
+				<div>6</div>
+				<div>7</div>
+				<div>8</div>
+				<div>9</div>
+				<div>10</div>
+			</div>
+			
+			<h1 class="text-center">Flex child Properties</h1>
+			<h2 class="text-center">Order = (-1 0 1)</h2>
+			<div class="order">
+				<div>1-div </div>
+				<div>2-div </div>
+				<div>3-div </div>
+				<div>4-div </div>
+			</div>
+			<h2 class="text-center">Flex-grow = (1 2 3 ...)</h2>
+			<div class="flexGrow">
+				<div>1 </div>
+				<div>2 </div>
+				<div>3 </div>
+				<div>4 </div>
+			</div>
+			<h2 class="text-center">flex-shrink = (1 2 3 ...)</h2>
+			<div class="flexShrink">
+				<div>1 </div>
+				<div>1 </div>
+				<div>1 </div>
+				<div>1 </div>
+			</div>
+			<h2 class="text-center">flex-basis = (1 2 3 ...)</h2>
+			<div class="flexBasis">
+				<div>1 </div>
+				<div>1 </div>
+				<div>1 </div>
+				<div>1 </div>
+			</div>
+			<h2 class="text-center">align-self = (no effect with float, clear, vertical-align)</h2>
+			<div class="alignSelf">
+				<div>auto      </div>
+				<div>flex-start</div>
+				<div>flex-end  </div>
+				<div>center    </div>
+				<div>baseline  </div>
+				<div>stretch   </div>
+			</div>
+		</div>
+	</body>
+	<script>
+		/* flex properties */
+		
+		const flexDirection = document.querySelector(".flex-direction");
+		for (let i = 1; i <= flexDirection.childElementCount; i ++){
+			let node = Object.values(flexDirection.children)[i-1];
+			
+			node.addEventListener('click', function (){
+				switch(i){
+					case 1: 
+						flexDirection.className = "flex-direction";
+						flexDirection.classList.add("flex-row");
+						break;
+					case 2: 
+						flexDirection.className = "flex-direction";
+						flexDirection.classList.add("flex-row-reverse");
+						break;
+					case 3: 
+						flexDirection.className = "flex-direction";
+						flexDirection.classList.add("flex-column");
+						break;
+					case 4: 
+						flexDirection.className = "flex-direction";
+						flexDirection.classList.add("flex-column-reverse");
+						break;
+				}
+			})
+		}
+		
+		/* flex-wrap */
+		const flexWrap = document.querySelector(".flexWrap");
+		for(let i = 1; i <= flexWrap.childElementCount; i ++){
+			let node = Object.values(flexWrap.children)[i-1];
+			node.addEventListener('click', function() {
+				switch(i){
+					case 1: 
+						flexWrap.className = "flexWrap";
+						flexWrap.classList.add("nowrap");
+						break;
+					case 2: 
+						flexWrap.className = "flexWrap";
+						flexWrap.classList.add("wrap");
+						break;
+					case 3: 
+						flexWrap.className = "flexWrap";
+						flexWrap.classList.add("center");
+						break;
+				}
+			})
+		}
+		/*justify-content*/
+		const justifyContent = document.querySelector(".justifyContent");
+		for(let i = 1; i <= justifyContent.childElementCount; i ++){
+			let node = Object.values(justifyContent.children)[i-1];
+			node.addEventListener("click", function() {
+				switch(i){
+					case 1: 
+						justifyContent.className = "justifyContent";
+						justifyContent.classList.add("flexStart");
+						break;
+					case 2: 
+						justifyContent.className = "justifyContent";
+						justifyContent.classList.add("flexEnd");
+						break;
+					case 3: 
+						justifyContent.className = "justifyContent";
+						justifyContent.classList.add("center");
+						break;
+					case 4: 
+						justifyContent.className = "justifyContent";
+						justifyContent.classList.add("spaceBetween");
+						break;	
+					case 5: 
+						justifyContent.className = "justifyContent";
+						justifyContent.classList.add("spaceAround");
+						break;
+					case 6: 
+						justifyContent.className = "justifyContent";
+						justifyContent.classList.add("spaceEvenly");
+						break;	
+				}
+			})
+		}
+		/* align-items */
+		const alignItems = document.querySelector(".alignItems");
+		for(let i = 1; i <= alignItems.childElementCount; i ++){
+			let node = Object.values(alignItems.children)[i-1];
+			node.addEventListener("click", function(){
+				switch(i){
+					case 1: 
+						alignItems.className = "alignItems";
+						alignItems.classList.add("flex-start");
+						break;
+					case 2: 
+						alignItems.className = "alignItems";
+						alignItems.classList.add("flex-end");
+						break;
+					case 3: 
+						alignItems.className = "alignItems";
+						alignItems.classList.add("flex-center");
+						break;
+					case 4: 
+						alignItems.className = "alignItems";
+						alignItems.classList.add("stretch");
+						break;
+					case 5: 
+						alignItems.className = "alignItems";
+						alignItems.classList.add("baseline");
+						break;
+				}
+			});
+		}
+		const alignContent = document.querySelector(".alignContent");
+		for(let i = 1; i <= alignContent.childElementCount; i ++){
+			let node = Object.values(alignContent.children)[i-1];
+			node.addEventListener("click", function(){
+				switch(i){
+					case 1: 
+						alignContent.className = "alignContent";
+						alignContent.classList.add("align-C-start");
+						break;
+					case 2: 
+						alignContent.className = "alignContent";
+						alignContent.classList.add("align-C-end");
+						break;
+					case 3: 
+						alignContent.className = "alignContent";
+						alignContent.classList.add("align-C-center");
+						break;
+					case 4: 
+						alignContent.className = "alignContent";
+						alignContent.classList.add("align-C-stretch");
+						break;
+					case 5: 
+						alignContent.className = "alignContent";
+						alignContent.classList.add("align-C-baseline");
+						break;
+					case 6: 
+						alignContent.className = "alignContent";
+						alignContent.classList.add("align-C-normal");
+						break;
+					case 7: 
+						alignContent.className = "alignContent";
+						alignContent.classList.add("align-C-space-between");
+						break;
+					case 8: 
+						alignContent.className = "alignContent";
+						alignContent.classList.add("align-C-space-around");
+						break;
+					case 9: 
+						alignContent.className = "alignContent";
+						alignContent.classList.add("align-C-space-evenly");
+						break;
+				}
+			})
+		}
+		const flexGap = document.querySelector(".flexGap");
+		let RowGap = flexGap.previousElementSibling.children;
+		let props;
+		for (let i = 1; i <= RowGap.length; i ++){
+			let node = Object.values(RowGap)[i-1];
+			node.addEventListener("click", function(){
+				props = i;
+				for(let j = 0; j < RowGap.length; j ++){
+					if(j !== i-1){
+						Object.values(RowGap)[j].style.padding = "14px";
+						Object.values(RowGap)[j].style.backgroundColor = "green";
+					} else {
+						node.style.backgroundColor = "red";
+					}
+				}
+				Object.values(RowGap)[i-1].style.cursor = "pointer";
+				console.log(props);
+				
+			})
+			
+		}
+		for(let i = 1; i <= flexGap.childElementCount; i ++){
+			let node = Object.values(flexGap.children)[i-1];
+			node.addEventListener("click", function(){
+				console.log(props);
+				switch(props){
+					case 1: flexGap.style.rowGap = `${node.innerText}rem`; break;
+					case 2: flexGap.style.columnGap = `${node.innerText}rem`; break;
+					case 3: flexGap.style.gap = `${node.innerText}rem`; break;
+					default: console.log(props); flexGap.style.gap = `${node.innerText}rem`; break;
+				}
+			});
+		}
+		
+		
+		/* Flex child property */
+		const order = document.querySelector(".order");
+		for(let i = 1; i <= order.childElementCount; i ++){
+			let node = Object.values(order.children)[i-1];
+			
+			let max = 0;
+			
+			node.addEventListener("click", function(){
+				if(max > 0){max *= -1} else{ max += 1}
+				node.style.order = max;
+				let h3 = document.createElement('h3');
+				h3.innerText = max;
+				node.appendChild(h3);
+			})
+		}
+		const flexGrow = document.querySelector('.flexGrow');
+		for(let i = 1; i <= flexGrow.childElementCount; i++){
+			let node = Object.values(flexGrow.children)[i-1];
+			let c = 1;
+			node.addEventListener("click", function(){
+				if(c > 4){
+				    c = 1;
+				} else {
+				    c += 1;
+				}
+				node.style.flexGrow = c;
+				node.innerText = c;		
+			});
+			
+		}
+		const flexShrink = document.querySelector(".flexShrink");
+		for(let i = 1; i <= flexShrink.childElementCount; i ++){
+			let node = Object.values(flexShrink.children)[i-1];
+			let c = 0;
+			node.addEventListener("click", function(){
+				c += 1;
+				node.style.flexShrink = c;
+				node.innerText = c;
+			})
+		}	
+		const flexBasis = document.querySelector(".flexBasis");
+		for(let i = 1; i <= flexBasis.childElementCount; i ++){
+			let node = Object.values(flexBasis.children)[i-1];
+			let c = 0;
+			node.addEventListener("click", function (){
+				c += 1;
+				if(c>=5){
+					node.style.flexBasis = "auto";
+					node.innerText = c;
+					c=0;
+				} else {
+					node.style.flexBasis = `${c}0pc`;
+					node.innerText = c;
+				}
+			});
+		}
+		const alignSelf = document.querySelector(".alignSelf");
+		for(let i = 1; i <= alignSelf.childElementCount; i ++){
+			let p = 0;
+			let node = Object.values(alignSelf.children)[i-1];
+			node.addEventListener("click", function(){
+				switch(i){
+					case 1: 
+						node.className = "";
+						node.style.alignSelf = "auto"; 
+						break;
+					case 2: 
+						node.className = "";
+						node.style.alignSelf = "flex-start"; 
+						break;
+					case 3: 
+						node.className = "";
+						node.style.alignSelf = "flex-end"; 
+						break;
+					case 4: 
+						node.className = "";
+						node.style.alignSelf = "center"; 
+						break;
+					case 5: 
+						node.className = "";
+						node.style.alignSelf = "baseline"; 
+						break;
+					case 6: 
+						node.className = "";
+						node.style.alignSelf = "stretch"; 
+						break;
+				}
+			});
+		}
+	</script>
+</html>
+
+
+
+
+
